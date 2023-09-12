@@ -465,7 +465,7 @@ public struct EarleyParser: AmbiguousGrammarParser {
 					}
 				}.filter { nonTerminal -> Bool in
 					nonTerminalProductions[nonTerminal, default: []].contains(where: { production -> Bool in
-						if case .some(.terminal) = production.production.first {
+						if case .some(.terminal(_)) = production.production.first {
 							return true
 						} else {
 							return false
